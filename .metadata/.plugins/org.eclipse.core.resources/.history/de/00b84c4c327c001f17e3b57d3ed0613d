@@ -1,0 +1,17 @@
+package com.example.springbt.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.example.springbt.entity.Student;
+
+@Repository
+public interface StudentRepo extends JpaRepository<Student, Integer> {
+ 
+	@Query(value ="select * from student e where e.name like %?1% order by e.name decs limit %?2%",
+			nativeQuery = true)
+	public List<Student> findByname(String name,int record);
+}

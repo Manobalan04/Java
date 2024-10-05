@@ -1,0 +1,22 @@
+package week5;
+
+import java.util.ArrayList;
+
+public class Colleti {
+
+	//Array
+	//Dynamic
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 ArrayList<Integer> a = new ArrayList<Integer>();
+		 a.add(12);
+		 a.add(34);
+		 a.add(0,9);
+		 a.add(1,10);
+		 a.remove(0);
+		 
+		 System.out.println(a);
+	}
+
+}

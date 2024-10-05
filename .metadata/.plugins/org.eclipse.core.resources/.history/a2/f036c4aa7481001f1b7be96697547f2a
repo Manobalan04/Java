@@ -1,0 +1,16 @@
+package Practice;
+
+public class Logic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int n=5;
+		int res = 0;
+		for (int i = 0; i <=n; i++) {
+			res=(n*n*n)+(n*n);
+			System.out.print(res+",");
+		}	
+	}
+
+}

@@ -1,0 +1,33 @@
+package week5;
+
+import java.util.ArrayList;
+
+public class Colleti {
+
+	//Array
+	//Dynamic
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 ArrayList<Integer> a = new ArrayList<Integer>();
+		 //creating array values using add method
+		 a.add(17);
+		 a.add(34);
+		 a.add(0,9);
+		 a.add(1,13);
+		 
+		 System.out.println(a);
+		 System.out.println(a.get(2)); //get the value using index
+		 a.set(1, 14);	//update the value using set method
+		 System.out.println(a);
+		 
+//		 a.remove(0);
+//		 a.clear();
+		 //(->) lamda function
+		 //here e will take each element in array to check with 15 if condi
+		 a.removeIf(e -> e >= 15);
+		 System.out.println(a);
+		 System.out.println(a.isEmpty());
+	}
+
+}

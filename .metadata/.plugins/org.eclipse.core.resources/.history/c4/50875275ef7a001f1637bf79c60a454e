@@ -1,0 +1,41 @@
+package com.example.springbt.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.springbt.entity.Student;
+import com.example.springbt.repository.StudentRepo;
+
+@Service
+public class EmpService {
+
+	@Autowired
+	StudentRepo stdRepo;
+	
+	public String createUser(Student std) {
+		stdRepo.save(std);
+		return "created";
+	}
+	
+	public List<Student> listAll() {
+		
+		return stdRepo.findAll();
+	}
+	
+	public Object DeleteUser(int id1) {
+		Map<String , Object> response= new HashMap<>();
+		Optional<Student> getStud= stdRepo.findById(id1);
+		
+		if(getStud.isPresent()) {
+			response.put("data",DeleteUser(id1));
+			return response;
+		}
+		System.out.println(response);
+		response.put("data", "No data found");
+	}
+}
